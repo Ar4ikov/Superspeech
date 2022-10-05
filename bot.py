@@ -10,6 +10,7 @@ class WhisperSpeechBot:
     def __init__(self):
         self.basement = pathlib.Path(__file__).parent.absolute()
         self.upload_dir = self.basement / "uploads"
+        self.upload_dir.mkdir(exist_ok=True)
 
         self.bot = TeleBot(os.environ["BOT_TOKEN"])
 
