@@ -1,0 +1,14 @@
+version: '3'
+services:
+  whisper-speechbot:
+    image: superspeech/whisper-speech:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: whisper-speechbot
+    environment:
+      - BOT_TOKEN=
+      - TRANSFORMERS_CACHE=/bot/.cache
+    volumes:
+      - ".:/bot"
+    restart: always
